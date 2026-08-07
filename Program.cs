@@ -1,12 +1,19 @@
 ﻿Console.Clear();
-int row = 0;
-int column = 0;
 
-Console.WriteLine("7 8 9 /\n4 5 6 *\n1 2 3 -\n[0] . = +");
+int row = 3;
+int column = 0;
 
 while (true)
 {
-    ConsoleKeyInfo input = Console.ReadKey();
+    Console.Clear();
+
+    Console.WriteLine("Welcome to the Terminal Calculator!");
+    Console.WriteLine("Use arrow keys to move the cursor.");
+    Console.WriteLine("Press Enter to choose your input, and ESC to exit.");
+
+    CalculatorDisplay.Draw(row, column);
+
+    ConsoleKeyInfo input = Console.ReadKey(true);
 
     if (input.Key == ConsoleKey.Escape)
     {
@@ -16,20 +23,23 @@ while (true)
     switch (input.Key)
     {
         case ConsoleKey.UpArrow:
-        row--;
-        break;
+            if (row > 0)
+                row--;
+            break;
 
         case ConsoleKey.DownArrow:
-        row++;
-        break;
+            if (row < 3)
+                row++;
+            break;
 
         case ConsoleKey.LeftArrow:
-        column--;
-        break;
+            if (column > 0)
+                column--;
+            break;
 
         case ConsoleKey.RightArrow:
-        column++;
-        break;
+            if (column < 3)
+                column++;
+            break;
     }
 }
-Console.WriteLine($"Row: {row}, Column: {column}");
