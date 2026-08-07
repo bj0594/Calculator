@@ -12,10 +12,10 @@ public static class CalculatorDisplay
 
         Console.ResetColor();
     }
-    public static void Draw(int row, int column)
+    public static void Draw(int row, int column, string display)
     {
         Console.WriteLine("╔═══════════════╗");
-        Console.WriteLine("║               ║");
+        Console.WriteLine($"║ {display, 13} ║");
         Console.WriteLine("╠═══╦═══╦═══╦═══╣");
         Console.Write("║");
         DrawButton("7", row == 0 && column == 0);
@@ -50,13 +50,26 @@ public static class CalculatorDisplay
         Console.Write("║");
         DrawButton("0", row == 3 && column == 0);
         Console.Write("║");
-        DrawButton(".", row == 3 && column == 1);
+        DrawButton("C", row == 3 && column == 1);
         Console.Write("║");
         DrawButton("=", row == 3 && column == 2);
         Console.Write("║");
         DrawButton("+", row == 3 && column == 3);
         Console.WriteLine("║");
         Console.WriteLine("╚═══╩═══╩═══╩═══╝");
+    }
+
+    public static string GetButton(int row, int column)
+    {
+        string[,] buttons = new string[,]
+        {
+            { "7", "8", "9", "/" },
+            { "4", "5", "6", "*" },
+            { "1", "2", "3", "-" },
+            { "0", "C", "=", "+" }
+        };
+
+        return buttons[row, column];
     }
 }
 

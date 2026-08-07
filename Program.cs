@@ -3,6 +3,8 @@
 int row = 3;
 int column = 0;
 
+string display = "";
+
 while (true)
 {
     Console.Clear();
@@ -11,7 +13,7 @@ while (true)
     Console.WriteLine("Use arrow keys to move the cursor.");
     Console.WriteLine("Press Enter to choose your input, and ESC to exit.");
 
-    CalculatorDisplay.Draw(row, column);
+    CalculatorDisplay.Draw(row, column, display);
 
     ConsoleKeyInfo input = Console.ReadKey(true);
 
@@ -40,6 +42,18 @@ while (true)
         case ConsoleKey.RightArrow:
             if (column < 3)
                 column++;
+            break;
+
+        case ConsoleKey.Enter:
+            string button = CalculatorDisplay.GetButton(row, column);
+            if (button == "C")
+            {
+                display = "";
+            }
+            else
+            {
+                display += button;
+            }
             break;
     }
 }
