@@ -1,5 +1,6 @@
 public static class CalculatorDisplay
 {
+    // Draws a button with the specified text and selection state
     public static void DrawButton(string text, bool selected)
     {
         if (selected)
@@ -12,6 +13,8 @@ public static class CalculatorDisplay
 
         Console.ResetColor();
     }
+
+    // Draws the calculator display and buttons
     public static void Draw(int row, int column, string display)
     {
         Console.WriteLine("╭─────────────────╮");
@@ -63,6 +66,7 @@ public static class CalculatorDisplay
 
     }
 
+    // Returns the button text based on the specified row and column
     public static string GetButton(int row, int column)
     {
         string[,] buttons = new string[,]

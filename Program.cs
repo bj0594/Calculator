@@ -1,10 +1,13 @@
 ﻿Console.Clear();
 
+// Initialize the cursor position and display string
 int row = 3;
 int column = 0;
 
+// Initialize the display string
 string display = "";
 
+// Main loop to handle user input and update the display
 while (true)
 {
     Console.Clear();
@@ -17,12 +20,14 @@ while (true)
 
     ConsoleKeyInfo input = Console.ReadKey(true);
 
+    // Exit the program if the Escape key is pressed
     if (input.Key == ConsoleKey.Escape)
     {
         Console.Clear();
         break;
     }
 
+    // Handle cursor movement and button selection based on user input
     switch (input.Key)
     {
         case ConsoleKey.UpArrow:
