@@ -1,8 +1,9 @@
 ﻿Console.Clear();
 
-// Initialize the cursor position and display string
+// Initialize the cursor position, display string and maximum display length
 int row = 3;
 int column = 0;
+const int MaxDisplayLength = 13;
 
 // Initialize the display string
 string display = "";
@@ -72,7 +73,10 @@ while (true)
             }
             else
             {
+                if (display.Length < MaxDisplayLength)
+                {
                 display += button;
+                }
             }
             break;
     }
