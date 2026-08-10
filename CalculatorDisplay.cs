@@ -14,10 +14,12 @@ public static class CalculatorDisplay
     }
     public static void Draw(int row, int column, string display)
     {
-        Console.WriteLine("╔═══════════════╗");
-        Console.WriteLine($"║ {display, 13} ║");
-        Console.WriteLine("╠═══╦═══╦═══╦═══╣");
-        Console.Write("║");
+        Console.WriteLine("╭─────────────────╮");
+        Console.WriteLine("│╔═══════════════╗│");
+        Console.WriteLine($"│║ {display, 13} ║│");
+        Console.WriteLine("│╚═══════════════╝│");
+        Console.WriteLine("│╔═══╦═══╦═══╦═══╗│");
+        Console.Write("│║");
         DrawButton("7", row == 0 && column == 0);
         Console.Write("║");
         DrawButton("8", row == 0 && column == 1);
@@ -25,9 +27,9 @@ public static class CalculatorDisplay
         DrawButton("9", row == 0 && column == 2);
         Console.Write("║");
         DrawButton("/", row == 0 && column == 3);
-        Console.WriteLine("║");
-        Console.WriteLine("╠═══╬═══╬═══╬═══╣");
-        Console.Write("║");
+        Console.WriteLine("║│");
+        Console.WriteLine("│╠═══╬═══╬═══╬═══╣│");
+        Console.Write("│║");
         DrawButton("4", row == 1 && column == 0);
         Console.Write("║");
         DrawButton("5", row == 1 && column == 1);
@@ -35,9 +37,9 @@ public static class CalculatorDisplay
         DrawButton("6", row == 1 && column == 2);
         Console.Write("║");
         DrawButton("*", row == 1 && column == 3);
-        Console.WriteLine("║");
-        Console.WriteLine("╠═══╬═══╬═══╬═══╣");
-        Console.Write("║");
+        Console.WriteLine("║│");
+        Console.WriteLine("│╠═══╬═══╬═══╬═══╣│");
+        Console.Write("│║");
         DrawButton("1", row == 2 && column == 0);
         Console.Write("║");
         DrawButton("2", row == 2 && column == 1);
@@ -45,9 +47,9 @@ public static class CalculatorDisplay
         DrawButton("3", row == 2 && column == 2);
         Console.Write("║");
         DrawButton("-", row == 2 && column == 3);
-        Console.WriteLine("║");
-        Console.WriteLine("╠═══╬═══╬═══╬═══╣");
-        Console.Write("║");
+        Console.WriteLine("║│");
+        Console.WriteLine("│╠═══╬═══╬═══╬═══╣│");
+        Console.Write("│║");
         DrawButton("0", row == 3 && column == 0);
         Console.Write("║");
         DrawButton("C", row == 3 && column == 1);
@@ -55,8 +57,10 @@ public static class CalculatorDisplay
         DrawButton("=", row == 3 && column == 2);
         Console.Write("║");
         DrawButton("+", row == 3 && column == 3);
-        Console.WriteLine("║");
-        Console.WriteLine("╚═══╩═══╩═══╩═══╝");
+        Console.WriteLine("║│");
+        Console.WriteLine("│╚═══╩═══╩═══╩═══╝│");
+        Console.WriteLine("╰─────────────────╯");
+
     }
 
     public static string GetButton(int row, int column)

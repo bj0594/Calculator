@@ -19,6 +19,7 @@ while (true)
 
     if (input.Key == ConsoleKey.Escape)
     {
+        Console.Clear();
         break;
     }
 
