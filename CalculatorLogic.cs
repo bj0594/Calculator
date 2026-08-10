@@ -32,7 +32,7 @@ public static class CalculatorLogic
                 {
                     return "Error: Division by zero";
                 }
-                return (first / second).ToString();
+                return (first / second).ToString("0.##"); // Format to 2 decimal places
             default:
                 return expression; // Unknown operator, return the original expression
         }
