@@ -7,16 +7,21 @@ int column = 0;
 // Initialize the display string
 string display = "";
 
+// Method to draw the calculator screen
+void DrawScreen()
+    {
+        Console.Clear();
+        Console.WriteLine("Welcome to the Terminal Calculator!");
+        Console.WriteLine("Use arrow keys to move the cursor.");
+        Console.WriteLine("Press Enter to choose your input, and ESC to exit.");
+
+        CalculatorDisplay.Draw(row, column, display);
+    }
+
 // Main loop to handle user input and update the display
 while (true)
 {
-    Console.Clear();
-
-    Console.WriteLine("Welcome to the Terminal Calculator!");
-    Console.WriteLine("Use arrow keys to move the cursor.");
-    Console.WriteLine("Press Enter to choose your input, and ESC to exit.");
-
-    CalculatorDisplay.Draw(row, column, display);
+    DrawScreen();
 
     ConsoleKeyInfo input = Console.ReadKey(true);
 
@@ -58,7 +63,12 @@ while (true)
             }
             else if (button == "=")
             {
-            display = CalculatorLogic.Calculate(display);
+                display = CalculatorLogic.Calculate(display);
+                DrawScreen();
+                Thread.Sleep(2000);
+
+                display = "";
+                break;
             }
             else
             {
