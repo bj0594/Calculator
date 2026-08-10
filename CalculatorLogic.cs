@@ -4,6 +4,27 @@ public static class CalculatorLogic
     // and prepares the values for the calculation.
     public static string Calculate(string expression)
     {
+        // Check for multiple operators in the expression
+        HashSet<char> operators = new HashSet<char>();
+        
+        // Iterate through the expression and add operators to the HashSet
+        foreach (char character in expression)
+        {
+            if (character == '+' ||
+                character == '-' ||
+                character == '*' ||
+                character == '/')
+            {
+                operators.Add(character);
+            }
+        }
+
+        // If there are multiple kinds of operators, return an error message
+        if (operators.Count > 1)
+        {
+            return "Error";
+        }
+
         // Find the first operator
         int operatorIndex = expression.IndexOfAny(['+', '-', '*', '/']);
 
