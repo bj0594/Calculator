@@ -58,7 +58,7 @@ public static class CalculatorLogic
             case '/':
                 if (second == 0)
                 {
-                    throw new DivideByZeroException();
+                    return double.NaN; // Return NaN for division by zero
                 }
 
                 return first / second;

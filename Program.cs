@@ -1,4 +1,5 @@
 ﻿Console.Clear();
+Console.CursorVisible = false;
 
 // Initialize the cursor position, display string and maximum display length
 int row = 3;

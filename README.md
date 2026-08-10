@@ -22,6 +22,8 @@ Create an empty expression
 
     IF Escape is pressed
 
+        Clear the console
+
         End the program
 
     ELSE IF Up Arrow is pressed
@@ -52,24 +54,38 @@ Create an empty expression
 
         Read the selected button
 
-        IF the button is a number
-
-            Add it to the expression
-
-        ELSE IF the button is an operator
-
-            Add it to the expression
-
-        ELSE IF the button is Clear
+        IF the button is Clear
 
             Clear the expression
 
         ELSE IF the button is Equals
 
-            Evaluate the expression
+            Parse the expression
+
+            IF the expression contains two numbers
+
+                Call the Calculate overload that takes two numbers
+
+            ELSE IF the expression contains multiple numbers
+
+                Create a list of numbers
+
+                Call the Calculate overload that takes a list of numbers
 
             Display the result
 
-## END LOOP
+            Wait for 2 seconds
+
+            Clear the expression
+
+        ELSE
+
+            Add the selected button to the expression
+
+            IF the expression reaches the maximum display length
+
+                Do not add more characters
+
+END LOOP
 
 ## END
