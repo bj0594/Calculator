@@ -56,6 +56,10 @@ while (true)
             {
                 display = "";
             }
+            else if (button == "=")
+            {
+            display = CalculatorLogic.Calculate(display);
+            }
             else
             {
                 display += button;
