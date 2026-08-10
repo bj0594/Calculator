@@ -4,19 +4,21 @@ public static class CalculatorLogic
     // and performs the calculation based on the operator.
     public static string Calculate(string expression)
     {
+        // Find the index of the operator in the expression
         int operatorIndex = expression.IndexOfAny(['+', '-', '*', '/']);
 
+        // If no operator is found, return the original expression
         if (operatorIndex == -1)
         {
-            return expression; // No operator found, return the original expression
+            return expression; 
         }
 
         // Split the expression into two numbers based on the operator index
         string firstNumber = expression[..operatorIndex];
         string secondNumber = expression[(operatorIndex + 1)..];
 
-        double first = int.Parse(firstNumber);
-        double second = int.Parse(secondNumber);
+        double first = double.Parse(firstNumber);
+        double second = double.Parse(secondNumber);
 
         // Perform the calculation based on the operator
         switch (expression[operatorIndex])
@@ -30,7 +32,7 @@ public static class CalculatorLogic
             case '/':
                 if (second == 0)
                 {
-                    return "Error: Division by zero";
+                    return "Error";
                 }
                 return (first / second).ToString("0.##"); // Format to 2 decimal places
             default:
