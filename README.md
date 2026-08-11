@@ -26,29 +26,11 @@ Create an empty expression
 
         End the program
 
-    ELSE IF Up Arrow is pressed
+    ELSE IF an Arrow key is pressed
 
-        IF row is greater than 0
+        IF the movement is within the calculator borders
 
-            Move selection up
-
-    ELSE IF Down Arrow is pressed
-
-        IF row is less than 3
-
-            Move selection down
-
-    ELSE IF Left Arrow is pressed
-
-        IF column is greater than 0
-
-            Move selection left
-
-    ELSE IF Right Arrow is pressed
-
-        IF column is less than 3
-
-            Move selection right
+            Update row or column
 
     ELSE IF Enter is pressed
 
@@ -62,17 +44,29 @@ Create an empty expression
 
             Parse the expression
 
-            IF the expression contains two numbers
+            Count the unique operators
 
-                Call the Calculate overload that takes two numbers
+            IF there is more than one unique operator
 
-            ELSE IF the expression contains multiple numbers
+                Display "Error"
 
-                Create a list of numbers
+            ELSE
 
-                Call the Calculate overload that takes a list of numbers
+                Count the numbers
 
-            Display the result
+                IF there are two numbers
+
+                    Call the Calculate overload
+                    that takes two numbers
+
+                ELSE IF there are more than two numbers
+
+                    Create a List<double> of numbers
+
+                    Call the Calculate overload
+                    that takes a List<double>
+
+                Display the result
 
             Wait for 2 seconds
 
@@ -80,11 +74,10 @@ Create an empty expression
 
         ELSE
 
-            Add the selected button to the expression
+            IF the expression has not reached
+            the maximum display length
 
-            IF the expression reaches the maximum display length
-
-                Do not add more characters
+                Add the selected button to the expression
 
 END LOOP
 
