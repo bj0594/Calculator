@@ -30,7 +30,11 @@ while (true)
     // Exit the program if the Escape key is pressed
     if (input.Key == ConsoleKey.Escape)
     {
+         display = "GOODBYE";
+        DrawScreen();
+        Thread.Sleep(2000);
         Console.Clear();
+        Console.CursorVisible = true;
         break;
     }
 
